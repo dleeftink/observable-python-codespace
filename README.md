@@ -11,8 +11,8 @@ This repository contains the basic prerequisites to get started with Observable 
 ## Start making changes
 
 Wait for the codespace to be built and the setup scripts to finish running (this may take some time). 
-- After succesfully setting up the environment, codespaces should
-automatically open `index.md` to the left and a preview pane to the right.
+- After succesfully setting up the environment, codespaces should have
+automatically opened `index.md` and `penguins.csv.py` to the left and a live preview pane to the right.
 - Additionally, a popup might open asking you to trust the live server destination.
 
 ![](https://raw.githubusercontent.com/dleeftink/observable-python-codespace/main/setup.png)
