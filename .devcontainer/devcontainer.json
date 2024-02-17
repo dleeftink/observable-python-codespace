@@ -43,9 +43,9 @@
 
 	"forwardPorts": [3000],
 	
-	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge && npm install",
+	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "conda install --file penguin-classification/requirements.txt --y", // && json -I -f $HOME/.config/Code/User/settings.json -e 'this.security.workspace.trust.startupPrompt=false'",
+	"updateContentCommand": "npm install ; \\\\n conda install --file penguin-classification/requirements.txt --y",
 	//"postCreateCommand": "conda install --file penguin-classification/requirements.txt --y",
 	"postAttachCommand": {
 	  "server": "code penguin-classification/docs/data/predictions.csv.py && npm run obs"
@@ -54,13 +54,6 @@
 	"customizations": {
 		"codespaces": {
 		  "openFiles": ["penguin-classification/docs/index.md"]
-		},
-		"vscode": {
-		  "settings": {
-			  "workbench.trustedDomains.promptInTrustedWorkspace": false,
-			  "security.workspace.trust.enabled": false,
-			  "security.workspace.trust.startupPrompt": "never"
-		  }	
 		}
 	}
 	
