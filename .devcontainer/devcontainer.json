@@ -50,7 +50,7 @@
 	
 	"customizations": {
 		"codespaces": {
-		  "openFiles": ["penguin-classification/docs/index.md"]
+		  "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
 		}
 	}
 	
