@@ -16,7 +16,12 @@
 	"features": {
     		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
 			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/npm-package:1": {
+			"package": "@observablehq/framework",
+			"version": "latest"
 		}
+
 	},
 
 	"portsAttributes": {
@@ -28,10 +33,9 @@
 
 	"forwardPorts": [3000],
 
-	"onCreateCommand": "echo 'Waiting for updateContentCommand ...'",
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "cd penguin-classification && conda install --y --file requirements.txt",
-	"postCreateCommand": "npm install && cd penguin-classification && npm install",
+	"postCreateCommand": "cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
