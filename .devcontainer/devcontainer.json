@@ -56,8 +56,8 @@
 		"codespaces": {
 		  // "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
 		  // "openFiles": ["penguin-classification/docs/index.md"]
-		},
-		/*"vscode": {
+		}/*,
+		"vscode": {
 			"settings": {
 				"python.defaultInterpreterPath": "/usr/local/bin/python",
    				"python.languageServer": "Pylance",
