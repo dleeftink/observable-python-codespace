@@ -10,7 +10,7 @@
 
 {
 	
-	"name": "Node via Miniconda",
+	"name": "Node & Conda",
 	"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
 	
 	// Features to add to the dev container. More info: https://containers.dev/features.
