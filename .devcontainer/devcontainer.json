@@ -46,12 +46,13 @@
 	"updateContentCommand": "conda config --add channels conda-forge && npm install",
 	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt",
 	"postAttachCommand": {
-	  "server": "npm run obs"
+	  "server": "code penguin-classification/docs/data/predictions.csv.py && npm run obs"
 	},
 	
 	"customizations": {
 		"codespaces": {
-		  "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
+		 // "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
+		  "openFiles": ["penguin-classification/docs/index.md"]
 		},
 		"vscode": {
 			"settings": {
