@@ -20,7 +20,7 @@
 		//},
  		"ghcr.io/devcontainers/features/conda:1": {
 			"version": "latest",
-			"addCondaForge": true
+			"addCondaForge": "true"
 		}
 		//"ghcr.io/devcontainers/features/node:1": {
 		//	"version": "lts"
