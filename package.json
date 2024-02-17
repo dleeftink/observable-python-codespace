@@ -3,9 +3,9 @@
     "@observablehq/framework": "^1.0.0"
   },
 
-  "devDepencies": {
+  /*"devDepencies": {
     "json": "^11.0.0"
-  },
+  },*/
 
   "scripts": {
 
