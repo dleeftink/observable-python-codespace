@@ -45,7 +45,7 @@
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install ; \\\\n conda install --file penguin-classification/requirements.txt --y",
+	"updateContentCommand": "npm install ; \\\\nconda install --file penguin-classification/requirements.txt --y",
 	//"postCreateCommand": "conda install --file penguin-classification/requirements.txt --y",
 	"postAttachCommand": {
 	  "server": "code penguin-classification/docs/data/predictions.csv.py && npm run obs"
