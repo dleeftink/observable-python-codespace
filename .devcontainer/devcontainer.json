@@ -13,7 +13,11 @@
 	"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+    		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
+			"version": "latest"
+		}
+	},
 
 	"portsAttributes": {
 		"3000": {
@@ -25,8 +29,8 @@
 	"forwardPorts": [3000],
 
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "conda config --add channels conda-forge && conda install nodejs -y && npm install",
-	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
+	"updateContentCommand": "conda config --add channels conda-forge && cd penguin-classification && conda install --y --file requirements.txt",
+	"postCreateCommand": "cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
