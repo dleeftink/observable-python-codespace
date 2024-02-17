@@ -33,7 +33,7 @@
 	
 	"customizations": {
 		"codespaces": {
-		  "openFiles": ["basic-template/docs/index.md"]
+		  "openFiles": ["penguin-classification/docs/index.md"]
 		}
 	}
 	
