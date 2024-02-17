@@ -41,10 +41,10 @@
 
 	"forwardPorts": [3000],
 	
-	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge && npm install",
 	// "waitFor": "onCreateCommand",
-	"updateContentCommand": "conda config --add channels conda-forge && npm install", // && json -I -f $HOME/.config/Code/User/settings.json -e 'this.security.workspace.trust.startupPrompt=false'",
-	"postCreateCommand": "conda install --file penguin-classification/requirements.txt --y",
+	"updateContentCommand": "conda install --file penguin-classification/requirements.txt --y", // && json -I -f $HOME/.config/Code/User/settings.json -e 'this.security.workspace.trust.startupPrompt=false'",
+	//"postCreateCommand": "conda install --file penguin-classification/requirements.txt --y",
 	"postAttachCommand": {
 	  "server": "code penguin-classification/docs/data/predictions.csv.py && npm run obs"
 	},
