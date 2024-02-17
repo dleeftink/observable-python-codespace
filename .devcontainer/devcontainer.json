@@ -41,9 +41,9 @@
 
 	"forwardPorts": [3000],
 	
-	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge",
+	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install",
+	"updateContentCommand": "npm install && conda config --add channels conda-forge",
 	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
