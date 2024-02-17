@@ -7,6 +7,10 @@ df = pd.read_csv("docs/data/penguins.csv")
 
 # Select columns to train the model
 X = df.iloc[:, [2]]
+
+# Try to comment out the line above and uncomment the X variable below 
+# to see updates reflected in the live preview
+
 # X = df.iloc[:, [2, 3, 4, 5]]
 Y = df.iloc[:, 0]
 
