@@ -24,6 +24,9 @@
 		//}
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "lts"
+		},
+		"ghcr.io/devcontainers-contrib/features/pylint:2": {
+			"version": "latest"
 		}
 		//"ghcr.io/devcontainers-contrib/features/npm-package:1": {
 		//	"package": "@observablehq/framework",
@@ -51,12 +54,18 @@
 	
 	"customizations": {
 		"codespaces": {
-		 // "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
-		  "openFiles": ["penguin-classification/docs/index.md"]
+		  "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
+		  // "openFiles": ["penguin-classification/docs/index.md"]
 		},
 		"vscode": {
 			"settings": {
-				"python.defaultInterpreterPath": "/usr/local/bin/python"
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+   				"python.languageServer": "Pylance",
+   				"pylint.path": [
+       					"/usr/local/bin/python",
+        				"-m",
+        				"pylint"
+    				]
 			},
 			"extensions": [
 				"ms-python.python",
