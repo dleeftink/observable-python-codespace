@@ -1,6 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 // https://containers.dev/implementors/json_reference/
+// https://code.visualstudio.com/docs/getstarted/settings#_default-settings
 // https://github.blog/changelog/2022-10-26-codespaces-customizable-initial-experience/
 // https://blog.siliconvalve.com/posts/2023/08/08/using-dev-containers-to-build-a-transportable-blog-writing-environment
 // https://code.visualstudio.com/remote/advancedcontainers/start-processes
