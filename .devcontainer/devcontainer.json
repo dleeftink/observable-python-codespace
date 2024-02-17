@@ -30,8 +30,8 @@
 
 	"onCreateCommand": "echo 'Waiting for updateContentCommand ...'",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "conda config --add channels conda-forge && cd penguin-classification && conda install --y --file requirements.txt && npm install",
-	"postCreateCommand": "cd penguin-classification && npm install",
+	"updateContentCommand": "cd penguin-classification && conda install --y --file requirements.txt",
+	"postCreateCommand": "npm install && cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
