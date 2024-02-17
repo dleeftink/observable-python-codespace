@@ -43,8 +43,8 @@
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install",
-	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
+	"updateContentCommand": "npm install && cd penguin-classification && conda install --y --file requirements.txt",
+	"postCreateCommand": "cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
