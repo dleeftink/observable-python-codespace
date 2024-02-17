@@ -5,7 +5,7 @@
 
   "scripts": {
 
-    "postinstall": "npm install --prefix penguin-classification",
+    // "postinstall": "npm install --prefix penguin-classification",
     "obs": "npm run dev --prefix penguin-classification"   
 
   }
