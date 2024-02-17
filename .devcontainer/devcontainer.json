@@ -10,13 +10,20 @@
 {
 	
 	"name": "Node via Miniconda",
-	"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
-
+	//"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-    		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
-			"version": "latest"
-		},
+    		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
+		//	"version": "latest"
+		//},
+		"features": {
+    			"ghcr.io/devcontainers/features/conda:1": {
+				"version": "latest",
+				"addCondaForge": true
+			}
+		}
 		//"ghcr.io/devcontainers/features/node:1": {
 		//	"version": "lts"
 		//},
@@ -36,7 +43,7 @@
 
 	"forwardPorts": [3000],
 	
-	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge",
+	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "npm install",
 	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
