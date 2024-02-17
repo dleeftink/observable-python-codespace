@@ -14,8 +14,11 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-    		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
-			"version": "latest"
+    		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
+		//	"version": "latest"
+		//},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
 		},
 		"ghcr.io/devcontainers-contrib/features/npm-package:1": {
 			"package": "@observablehq/framework",
@@ -33,6 +36,7 @@
 
 	"forwardPorts": [3000],
 
+	"onCreateCommand": "conda config --add channels conda-forge",
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "cd penguin-classification && conda install --y --file requirements.txt",
 	"postCreateCommand": "cd penguin-classification && npm install",
