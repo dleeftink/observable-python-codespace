@@ -10,15 +10,14 @@
 {
 	
 	"name": "Node via Miniconda",
-	//"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/vscode/devcontainers/anaconda",
 	
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/conda:1": {
-			"version": "latest",
-			"addCondaForge": "true"
-		}
+	//"features": {
+		//"ghcr.io/devcontainers/features/conda:1": {
+		//	"version": "latest",
+		//	"addCondaForge": "true"
+		//}
     		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
 		//	"version": "latest"
 		//},
@@ -43,7 +42,7 @@
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install && conda config --add channels conda-forge",
+	"updateContentCommand": "conda config --add channels conda-forge && conda install nodejs -y && npm install",
 	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
