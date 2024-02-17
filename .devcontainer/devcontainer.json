@@ -19,12 +19,12 @@
 		//	"version": "latest",
 		//	"addCondaForge": "true"
 		//}
-    		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
-		//	"version": "latest"
-		//},
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "lts"
-		}
+    		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
+			"version": "latest"
+		},
+		//"ghcr.io/devcontainers/features/node:1": {
+		//	"version": "lts"
+		//}
 		//"ghcr.io/devcontainers-contrib/features/npm-package:1": {
 		//	"package": "@observablehq/framework",
 		//	"version": "latest"
@@ -51,7 +51,7 @@
 	
 	"customizations": {
 		"codespaces": {
-		  "openFiles": ["penguin-classification/docs/data/predictions.csv.py"]
+		  "openFiles": ["penguin-classification/docs/index.md"]
 		}
 	}
 	
