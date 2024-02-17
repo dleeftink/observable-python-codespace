@@ -3,6 +3,10 @@
     "@observablehq/framework": "^1.0.0"
   },
 
+  "devDepencies": {
+    "json": "^11.0.0"
+  },
+
   "scripts": {
 
     "postinstall": "npm install --prefix penguin-classification",
