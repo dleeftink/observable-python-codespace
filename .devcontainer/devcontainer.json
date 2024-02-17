@@ -29,7 +29,7 @@
 	"forwardPorts": [3000],
 
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "conda config --add channels conda-forge && cd penguin-classification && conda install --y --file requirements.txt",
+	"updateContentCommand": "conda config --add channels conda-forge && cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postCreateCommand": "cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
