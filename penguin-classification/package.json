@@ -1,6 +1,5 @@
 {
   "type": "module",
-  "private": true,
   "scripts": {
     "clean": "rm -rf docs/.observablehq/cache",
     "build": "rm -rf dist && observable build",
@@ -9,9 +8,7 @@
     "observable": "observable"
   },
   "dependencies": {
-    "@observablehq/framework": "latest",
-    "d3-dsv": "^3.0.1",
-    "d3-time-format": "^4.1.0"
+    "@observablehq/framework": "latest"
   },
   "engines": {
     "node": ">=20.6"

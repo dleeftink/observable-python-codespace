@@ -9,11 +9,8 @@
 
 {
 	
-	"name": "Node.js",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/jshint:2": {}
-	},
+	"name": "Node via Miniconda",
+	"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -28,8 +25,8 @@
 	"forwardPorts": [3000],
 
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install",
-	"postCreateCommand": "cd basic-template && npm install",
+	"updateContentCommand": "conda config --add channels conda-forge && conda install nodejs -y && npm install",
+	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
