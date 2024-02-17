@@ -1,4 +1,4 @@
-# Observable Codespaces Python starter
+# Observable Framework Python starter
 
 This repository contains the basic prerequisites to get started with Observable Framework on Github Codespaces, using `conda` as Python package manager.
 
