@@ -13,7 +13,7 @@
 	"image": "mcr.microsoft.com/vscode/devcontainers/miniconda",
 	
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	//"features": {
+	"features": {
 		//"ghcr.io/devcontainers/features/conda:1": {
 		//	"version": "latest",
 		//	"addCondaForge": "true"
@@ -21,15 +21,15 @@
     		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
 		//	"version": "latest"
 		//},
-		//"ghcr.io/devcontainers/features/node:1": {
-		//	"version": "lts"
-		//},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
+		},
 		//"ghcr.io/devcontainers-contrib/features/npm-package:1": {
 		//	"package": "@observablehq/framework",
 		//	"version": "latest"
 		//}
 
-	//},
+	},
 
 	"portsAttributes": {
 		"3000": {
@@ -42,7 +42,7 @@
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "conda config --add channels conda-forge && conda install nodejs -y && npm install",
+	"updateContentCommand": "conda config --add channels conda-forge && npm install",
 	"postCreateCommand": "cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
