@@ -14,16 +14,16 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-    		//"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
-		//	"version": "latest"
-		//},
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "lts"
-		},
-		"ghcr.io/devcontainers-contrib/features/npm-package:1": {
-			"package": "@observablehq/framework",
+    		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {
 			"version": "latest"
-		}
+		},
+		//"ghcr.io/devcontainers/features/node:1": {
+		//	"version": "lts"
+		//},
+		//"ghcr.io/devcontainers-contrib/features/npm-package:1": {
+		//	"package": "@observablehq/framework",
+		//	"version": "latest"
+		//}
 
 	},
 
@@ -35,12 +35,10 @@
 	  },
 
 	"forwardPorts": [3000],
-
-
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge",
 	"waitFor": "onCreateCommand",
-	"updateContentCommand": "cd penguin-classification && conda install --y --file requirements.txt",
+	"updateContentCommand": "npm install && cd penguin-classification && conda install --y --file requirements.txt",
 	"postCreateCommand": "cd penguin-classification && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
