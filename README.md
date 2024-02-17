@@ -15,7 +15,7 @@ Wait for the codespace to be built and the setup scripts to finish running (this
 automatically open `index.md` to the left and a preview pane to the right.
 - Additionally, a popup might open asking you to trust the live server destination.
 
-![](https://raw.githubusercontent.com/dleeftink/observable-codespace/main/setup.png)
+![](https://raw.githubusercontent.com/dleeftink/observable-python-codespace/main/setup.png)
 
 You can edit the `index.md` contents, after which the content changes are reflected (with a slight delay) in the preview pane.
 - Navigate to `penguin-classification/docs/data/penguins.csv.py` and uncomment `X = df.iloc[:, [2, 3, 4, 5]]` to observe how changes to the Python *data-loader* are propagated to the live-preview.
