@@ -28,6 +28,7 @@
 
 	"forwardPorts": [3000],
 
+	"onCreateCommand": "echo 'Waiting for updateContentCommand ...'",
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "conda config --add channels conda-forge && cd penguin-classification && conda install --y --file requirements.txt && npm install",
 	"postCreateCommand": "cd penguin-classification && npm install",
