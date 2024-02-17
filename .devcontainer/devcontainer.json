@@ -52,6 +52,11 @@
 	"customizations": {
 		"codespaces": {
 		  "openFiles": ["penguin-classification/docs/index.md"]
+		},
+		"vscode": {
+			"extensions": [
+				"ms-python.vscode-pylance"	
+			]
 		}
 	}
 	
