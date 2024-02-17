@@ -42,7 +42,7 @@
 	"forwardPorts": [3000],
 	
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt && conda config --add channels conda-forge && npm install",
-	// "waitFor": "onCreateCommand",
+	"waitFor": "onCreateCommand",
 	"updateContentCommand": "conda install --file penguin-classification/requirements.txt --y", // && json -I -f $HOME/.config/Code/User/settings.json -e 'this.security.workspace.trust.startupPrompt=false'",
 	//"postCreateCommand": "conda install --file penguin-classification/requirements.txt --y",
 	"postAttachCommand": {
@@ -52,6 +52,13 @@
 	"customizations": {
 		"codespaces": {
 		  "openFiles": ["penguin-classification/docs/index.md"]
+		},
+		"vscode": {
+		  "settings": {
+			  "workbench.trustedDomains.promptInTrustedWorkspace": false,
+			  "security.workspace.trust.enabled": false,
+			  "security.workspace.trust.startupPrompt": "never"
+		  }	
 		}
 	}
 	
