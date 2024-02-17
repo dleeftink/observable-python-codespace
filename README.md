@@ -18,7 +18,7 @@ automatically open `index.md` to the left and a preview pane to the right.
 ![](https://raw.githubusercontent.com/dleeftink/observable-codespace/main/setup.png)
 
 You can edit the `index.md` contents, after which the content changes are reflected (with a slight delay) in the preview pane.
-- Navigate to `penguin-classification/docs/data/penguins.csv.py` and change `X = df.iloc[:, [2, 3, 4, 5]]` to `X = df.iloc[:, [2]]` to observe how changes to the Python *data-loader* are reflected live.
+- Navigate to `penguin-classification/docs/data/penguins.csv.py` and uncomment `X = df.iloc[:, [2, 3, 4, 5]]` to observe how changes to the Python *data-loader* are propagated to the live-preview.
 
 If updates stop being reflected in the preview pane, refresh the page. If updates aren't propagated after refreshing, execute `CTRL/CMD + C` in the terminal after which you can restart the live server using `npm run obs`.
 - If you accidentally close the preview pane, you can re-open this by navigating to the `Ports` tab on the bottom half of the screen and hovering the `Forwarded Address`. Click the `Preview in Editor` icon that shows on hover to re-open the preview inside your codespace.
