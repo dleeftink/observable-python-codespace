@@ -1,0 +1,70 @@
+
+{
+	"name": "Observable Framework Python starter",
+	"image": "mambaorg/micromamba:alpine3.19",
+	"features": {
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
+			"globalPackages": "@devcontainers/cli" // remove in prod
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {} // remove in prod
+	},
+
+	// "remoteUser": "root", // run as root when creating image in case of d-o-d
+
+	"remoteEnv": {
+	  "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
+	  "$MAMBA_ROOT_PREFIX": "/home/mamba"
+	},
+  
+	"forwardPorts": [
+	  3000
+	],
+	"portsAttributes": {
+	  "3000": {
+		"label": "Live preview",
+		"onAutoForward": "openPreview"
+	  }
+	},
+  
+	
+	/*"onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+  
+	// Check if .devcontainer is the only folder, and if so, 
+	// temporarily move the .devcontainer folders out of the way 
+	// and clone template repository to root. Else assume contents
+	// are available.
+  
+	"updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+  
+	// Additional postinstall commands are execute via package.json
+  
+	"waitFor": "updateContentCommand",
+	"postCreateCommand": "npm install", */
+
+	"postAttachCommand":  {
+	   //"python": "if [ \"$(whoami)\" = \"root\" ]; then \n micromamba create -p base python -c conda-forge -y ; export PATH=\"/opt/conda/envs/base/bin:$PATH\" ; bash -c 'eval \"$(micromamba shell hook -s bash )\" ; micromamba activate base' ; exec bash \n else \n micromamba install python -c conda-forge -y --dry-run \n fi"
+	   "init": "source ./.devcontainer/setup.sh"
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+		  "extensions": [
+			"ms-azuretools.vscode-docker"
+		  ],
+
+		  "settings": {
+			"terminal.integrated.defaultProfile.linux": "bash",
+			"terminal.integrated.profiles.linux": {
+			  "bash": {
+				"path": "/bin/bash"
+			  	}
+				}
+			}
+		}
+
+	}
+	
+
+}
