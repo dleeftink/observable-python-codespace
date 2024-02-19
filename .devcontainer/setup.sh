@@ -1,8 +1,5 @@
 echo 'Please wait for setup to finish ...'
 
-  apk update
-  apk add coreutils
-
 # get repo
 
 if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ]; 
@@ -24,7 +21,10 @@ fi
 
 if [ "$(whoami)" = "root" ]; 
 then  
-  
+
+  apk update
+  apk add coreutils
+
   micromamba create -p base python -c conda-forge -y
   export PATH="/opt/conda/envs/base/bin:$PATH"
   
