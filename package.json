@@ -5,6 +5,7 @@
 
   "scripts": {
 
+    "postinstall": "npm install --prefix penguin-classification; \\\n micromamba install -c conda-forge --file penguin-classification/requirements.txt -y",
     "obs": "npm run dev --prefix penguin-classification"   
 
   }
