@@ -28,11 +28,8 @@ then
   micromamba create -p base python -c conda-forge -y
   export PATH="/opt/conda/envs/base/bin:$PATH"
   
-  bash -c \
-    'eval "$(micromamba shell hook -s bash )"' \ 
-    'micromamba activate base'
-
-  # exec bash 
+  eval "$(micromamba shell hook -s bash )"
+  micromamba activate base
 
 else 
 
@@ -44,4 +41,4 @@ fi
 # and postinstall script
 
 # npm install
-# exec bash
+# npm run obs
