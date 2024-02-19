@@ -1,61 +1,51 @@
-
 {
-	"name": "Observable Framework Python starter",
-	"image": "mambaorg/micromamba:alpine3.19",
-	"features": {
-		"ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
-		"ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
-			"globalPackages": "@devcontainers/cli" // remove in prod
-		},
-		"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {} // remove in prod
-	},
+  "name": "Observable Framework Python starter",
+  "image": "mambaorg/micromamba:alpine3.19",
+  "features": {
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
+      "globalPackages": "@devcontainers/cli", // remove in prod
+    },
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}, // remove in prod
+  },
 
-	"remoteUser": "root", // run as root when creating image in case of d-o-d
+  "remoteUser": "root", // run as root when creating image in case of d-o-d
 
-	"remoteEnv": {
-	  "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
-	  "$MAMBA_ROOT_PREFIX": "/home/mamba"
-	},
-  
-	"forwardPorts": [
-	  3000
-	],
-	"portsAttributes": {
-	  "3000": {
-		"label": "Live preview",
-		"onAutoForward": "openPreview"
-	  }
-	},
-  
-	
-	/*"onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-    
-	"waitFor": "updateContentCommand",*/
+  "remoteEnv": {
+    "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
+    "$MAMBA_ROOT_PREFIX": "/home/mamba",
+  },
 
-	"postCreateCommand": "bash -c 'source ./.devcontainer/setup.sh'", 
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Live preview",
+      "onAutoForward": "openPreview",
+    },
+  },
 
-	"postAttachCommand":  {
-	   //"init": "source ./.devcontainer/setup.sh"
-	},
+  // "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+  // "waitFor": "updateContentCommand",
 
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-		  "extensions": [
-			"ms-azuretools.vscode-docker"
-		  ]/*,
+  "postCreateCommand": "bash -c 'source ./.devcontainer/setup.sh'",
 
-		  "settings": {
-			"terminal.integrated.defaultProfile.linux": "bash",
-			"terminal.integrated.profiles.linux": {
-			  "bash": {
-				"path": "/bin/bash"
-			  	}
-				}
-			}*/
-		}
+  "postAttachCommand": {
+    "serve": "bash -c 'eval \"$(micromamba shell hook -s bash )\" && micromamba activate base && npm run get && npm run obs'",
+  },
 
-	}
-	
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker"],
 
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+          },
+        },
+      },
+    },
+  },
 }
