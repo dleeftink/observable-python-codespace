@@ -27,7 +27,7 @@ then
 
   micromamba create -p base python -c conda-forge -y
   export PATH="/opt/conda/envs/base/bin:$PATH"
-  
+
   eval "$(micromamba shell hook -s bash )"
   micromamba activate base
 
@@ -40,5 +40,4 @@ fi
 # project dependencies installed via package.json
 # and postinstall script
 
-# npm install
-# npm run obs
+npm install
