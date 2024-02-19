@@ -9,7 +9,7 @@
     "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}, // remove in prod
   },
 
-  "remoteUser": "root", // run as root when creating image in case of d-o-d
+  "remoteUser": "root", // run as root when in prod
 
   "remoteEnv": {
     "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
