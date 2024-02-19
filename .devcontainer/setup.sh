@@ -1,5 +1,7 @@
 echo 'Please wait for setup to finish ...'
 
+  micromamba shell init --shell bash --root-prefix=~/micromamba
+
 # get repo
 
 if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ]; 
