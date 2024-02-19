@@ -10,7 +10,7 @@
 		"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {} // remove in prod
 	},
 
-	// "remoteUser": "root", // run as root when creating image in case of d-o-d
+	"remoteUser": "root", // run as root when creating image in case of d-o-d
 
 	"remoteEnv": {
 	  "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
@@ -29,21 +29,13 @@
   
 	
 	/*"onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-  
-	// Check if .devcontainer is the only folder, and if so, 
-	// temporarily move the .devcontainer folders out of the way 
-	// and clone template repository to root. Else assume contents
-	// are available.
-  
-	"updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
-  
-	// Additional postinstall commands are execute via package.json
-  
-	"waitFor": "updateContentCommand",
-	"postCreateCommand": "npm install", */
+    
+	"waitFor": "updateContentCommand",*/
+
+	"postCreateCommand": "basc -c './.devcontainer/setup.sh'", 
 
 	"postAttachCommand":  {
-	   "init": "source ./.devcontainer/setup.sh"
+	   //"init": "source ./.devcontainer/setup.sh"
 	},
 
 	// Configure tool-specific properties.
@@ -51,7 +43,7 @@
 		"vscode": {
 		  "extensions": [
 			"ms-azuretools.vscode-docker"
-		  ],
+		  ]/*,
 
 		  "settings": {
 			"terminal.integrated.defaultProfile.linux": "bash",
@@ -61,7 +53,7 @@
 			  	}
 				}
 			}
-		}
+		}*/
 
 	}
 	
