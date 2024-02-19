@@ -27,6 +27,7 @@
   // "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
   // "waitFor": "updateContentCommand",
 
+  // needs explicit bash because of Alpine ash default
   "postCreateCommand": "bash -c 'source ./.devcontainer/setup.sh'",
 
   "postAttachCommand": {
