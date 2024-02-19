@@ -32,7 +32,7 @@
     
 	"waitFor": "updateContentCommand",*/
 
-	"postCreateCommand": "basc -c './.devcontainer/setup.sh'", 
+	"postCreateCommand": "bash -c './.devcontainer/setup.sh'", 
 
 	"postAttachCommand":  {
 	   //"init": "source ./.devcontainer/setup.sh"
