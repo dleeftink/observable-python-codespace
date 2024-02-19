@@ -43,7 +43,6 @@
 	"postCreateCommand": "npm install", */
 
 	"postAttachCommand":  {
-	   //"python": "if [ \"$(whoami)\" = \"root\" ]; then \n micromamba create -p base python -c conda-forge -y ; export PATH=\"/opt/conda/envs/base/bin:$PATH\" ; bash -c 'eval \"$(micromamba shell hook -s bash )\" ; micromamba activate base' ; exec bash \n else \n micromamba install python -c conda-forge -y --dry-run \n fi"
 	   "init": "source ./.devcontainer/setup.sh"
 	},
 
