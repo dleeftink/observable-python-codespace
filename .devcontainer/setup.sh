@@ -1,5 +1,8 @@
 echo 'Please wait for setup to finish ...'
 
+  apk update
+  apk add coreutils
+
 # get repo
 
 if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ]; 
@@ -40,6 +43,5 @@ fi
 # project dependencies installed via package.json
 # and postinstall script
 
-npm install
-
-exec bash
+# npm install
+# exec bash
