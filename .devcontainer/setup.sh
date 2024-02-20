@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo 'Please wait for setup to finish ...'
 
   micromamba shell init --shell bash --root-prefix=~/micromamba
