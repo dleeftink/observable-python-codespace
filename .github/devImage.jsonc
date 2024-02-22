@@ -7,7 +7,7 @@
       },
       //"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}, // remove in prod
       "ghcr.io/devcontainers-contrib/features/bash-command:1": { 
-        "command": "apk update && apk add coreutils && apk add git"
+        "command": "apk update && apk add coreutils && apk add git && apk upgrade wget"
       }
       
     },
@@ -28,12 +28,12 @@
       }
     },
   
-    "onCreateCommand": "echo 'Please wait for live pane ...'",  
-    "updateContentCommand" : "wget -P .devcontainer \"$source_file\" -nc", // issue: blocks further commands if exists
-    "postCreateCommand": "source .devcontainer/setup.sh",
+    "onCreateCommand": "echo 'Please wait for live pane ...' && [ ! -f .devcontainer/$(basename \"$source_file\") ] && wget -P .devcontainer \"$source_file\" || exit 0", //todo: more succint check for setup file
+    // "updateContentCommand": "wget -q -P .devcontainer \"$source_file\" -nc > /dev/null  2>&1",
+    "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
 
     "postAttachCommand": {
-      // "serve": "npm run dep && npm run dev"
+      "serve": "npm run dep && npm run dev"
     },
   
     "customizations": {
