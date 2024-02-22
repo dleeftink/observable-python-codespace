@@ -2,10 +2,8 @@
   "dependencies": {
     "@observablehq/framework": "^1.0.0"
   },
-
   "scripts": {
-
-    "obs": "npm run dev --prefix penguin-classification"   
-
+    "dep": "npm install --prefix penguin-classification && micromamba install -c conda-forge --file penguin-classification/requirements.txt -y",
+    "dev": "npm run dev --prefix penguin-classification"   
   }
 }

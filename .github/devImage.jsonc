@@ -1,0 +1,53 @@
+{
+    "name": "Observable Framework Python starter",
+    "image": "mambaorg/micromamba:alpine3.19",
+    "features": {
+      "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
+        "globalPackages": "@devcontainers/cli" // remove in prod
+      },
+      "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}, // remove in prod
+      "ghcr.io/devcontainers-contrib/features/bash-command:1": { 
+        "command": "apk update && apk add coreutils && apk add git"
+      }
+      
+    },
+  
+    // "remoteUser": "root", // run as root when in prod
+  
+    "remoteEnv": {
+      "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
+      "$MAMBA_ROOT_PREFIX": "/opt/conda"
+    },
+  
+    "forwardPorts": [3000],
+    "portsAttributes": {
+      "3000": {
+        "label": "Live preview",
+        "onAutoForward": "openPreview"
+      }
+    },
+  
+    "onCreateCommand": "echo 'Please wait for live pane ...'",
+    // "waitFor": "updateContentCommand",
+  
+    "postCreateCommand": "source .devcontainer/setup.sh",
+
+    "postAttachCommand": {
+      "serve": "npm run dep && npm run dev"
+    },
+  
+    "customizations": {
+      "vscode": {
+        "extensions": ["ms-azuretools.vscode-docker"]/*,
+
+        "settings": {
+            "terminal.integrated.defaultProfile.linux": "bash",
+            "terminal.integrated.profiles.linux": {
+              "bash": {
+                "path": "/bin/bash"
+              }
+            }
+        }*/
+      }
+    }
+  }
