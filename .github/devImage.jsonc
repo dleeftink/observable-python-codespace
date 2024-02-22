@@ -12,7 +12,7 @@
       
     },
   
-    // "remoteUser": "root", // run as root when in prod
+    // "remoteUser": "root", // run as root when debugging
   
     "remoteEnv": {
       "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
@@ -31,11 +31,10 @@
     // "waitFor": "updateContentCommand",
   
     // to do: env.yaml
-    "onCreateCommand": "bash -c 'eval \"$(micromamba shell hook --shell bash)\" && micromamba activate && micromamba install python -c conda-forge -y'",
     "postCreateCommand": "source .devcontainer/setup.sh",
 
     "postAttachCommand": {
-      //"serve": "bash -c 'eval \"$(micromamba shell hook -s bash )\" && micromamba activate base && npm run get && npm run obs'"
+      "serve": "npm run dep && npm run dev"
     },
   
     // Configure tool-specific properties.
