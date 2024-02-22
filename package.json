@@ -3,8 +3,7 @@
     "@observablehq/framework": "^1.0.0"
   },
   "scripts": {
-    
-    "put": "npm install --prefix penguin-classification && micromamba install -c conda-forge --file penguin-classification/requirements.txt -y",
-    "obs": "npm run dev --prefix penguin-classification"
+    "dep": "npm install --prefix penguin-classification && micromamba install -c conda-forge --file penguin-classification/requirements.txt -y",
+    "dev": "npm run dev --prefix penguin-classification"   
   }
 }
