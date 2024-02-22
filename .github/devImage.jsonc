@@ -2,14 +2,17 @@
     "name": "Observable Framework Python starter",
     "image": "mambaorg/micromamba:alpine3.19",
     "features": {
-      "ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
       "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
         "globalPackages": "@devcontainers/cli" // remove in prod
       },
-      "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {} // remove in prod
+      "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}, // remove in prod
+      "ghcr.io/devcontainers-contrib/features/bash-command:1": { 
+        "command": "apk update && apk add coreutils && apk add git"
+      }
+      
     },
   
-    "remoteUser": "root", // run as root when in prod
+    // "remoteUser": "root", // run as root when in prod
   
     "remoteEnv": {
       "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
@@ -27,9 +30,10 @@
     // "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
     // "waitFor": "updateContentCommand",
   
-    // needs explicit bash because of Alpine ash default
+    // to do: env.yaml
+    "onCreateCommand": "bash -c 'eval \"$(micromamba shell hook --shell bash)\" && micromamba activate && micromamba install python -c conda-forge -y'",
     "postCreateCommand": "source .devcontainer/setup.sh",
-  
+
     "postAttachCommand": {
       //"serve": "bash -c 'eval \"$(micromamba shell hook -s bash )\" && micromamba activate base && npm run get && npm run obs'"
     },
