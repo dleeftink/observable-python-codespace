@@ -10,9 +10,9 @@ then
 
   mv .devcontainer .. 
   git clone "$target_repo" . 
-  # rm -rf .devcontainer 
-  # git clean -f -f
-  # mv ../.devcontainer . 
+# rm -rf .devcontainer 
+# git clean -f -f
+# mv ../.devcontainer . 
   mv -f ../.devcontainer/devcontainer.json .devcontainer
 
 else 
