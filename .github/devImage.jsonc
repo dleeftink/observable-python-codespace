@@ -12,7 +12,7 @@
       
     },
   
-    // "remoteUser": "root", // run as root when debugging
+    // "remoteUser": "root", // run as root when in prod
   
     "remoteEnv": {
       "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
@@ -27,17 +27,15 @@
       }
     },
   
-    // "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+    "onCreateCommand": "echo 'Please wait for live pane ...'",
     // "waitFor": "updateContentCommand",
   
-    // to do: env.yaml
     "postCreateCommand": "source .devcontainer/setup.sh",
 
     "postAttachCommand": {
       "serve": "npm run dep && npm run dev"
     },
   
-    // Configure tool-specific properties.
     "customizations": {
       "vscode": {
         "extensions": ["ms-azuretools.vscode-docker"]/*,
