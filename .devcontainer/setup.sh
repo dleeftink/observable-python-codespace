@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo 'Please wait for setup to finish ...'
-
-  micromamba shell init --shell bash --root-prefix=~/micromamba
+eval "$(micromamba shell hook --shell bash)" 
 
 # get repo
 
@@ -21,27 +20,10 @@ else
 
 fi
 
-# install python
-
-if [ "$(whoami)" = "root" ]; 
-then  
-
-  apk update
-  apk add coreutils
-
-  micromamba create -p base python -c conda-forge -y
-  export PATH="/opt/conda/envs/base/bin:$PATH"
-
-  eval "$(micromamba shell hook -s bash )"
-  micromamba activate base
-
-else 
-
+  micromamba activate 
   micromamba install python -c conda-forge -y
-
-fi
 
 # project dependencies installed via package.json
 # and postinstall script
 
-npm install
+  npm install
