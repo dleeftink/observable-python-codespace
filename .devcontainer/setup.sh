@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo 'Please wait for setup to finish ...'
-eval "$(micromamba shell hook --shell bash)" 
+# eval "$(micromamba shell hook --shell bash )" 
 
 # get repo
 
@@ -14,6 +14,7 @@ then
 # git clean -f -f
 # mv ../.devcontainer . 
   mv -f ../.devcontainer/devcontainer.json .devcontainer
+  rm -rf ../.devcontainer 
 
 else 
 
@@ -21,11 +22,11 @@ else
 
 fi
 
-  micromamba activate 
-  micromamba install -y -n base -f .devcontainer/env.yaml
-  micromamba clean --all --yes
+# micromamba activate 
+# micromamba install -y -n base -f .devcontainer/env.yaml
+# micromamba clean --all --yes
 
 # project dependencies installed via package.json
 # and postinstall script
 
-  npm install
+# npm install
