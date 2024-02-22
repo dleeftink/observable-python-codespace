@@ -22,7 +22,7 @@ else
 fi
 
   micromamba activate 
-  micromamba install -y -n base -f .devcontainer/env.yaml &&
+  micromamba install -y -n base -f .devcontainer/env.yaml
   micromamba clean --all --yes
 
 # project dependencies installed via package.json
