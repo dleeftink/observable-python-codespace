@@ -1,3 +1,5 @@
+// mkdir .devcontainer && curl https://raw.githubusercontent.com/dleeftink/observable-python-codespace/main/.github/devImage.jsonc > .devcontainer/devcontainer.json
+
 {
     "name": "Observable Framework Python starter",
     "image": "mambaorg/micromamba:alpine3.19",
