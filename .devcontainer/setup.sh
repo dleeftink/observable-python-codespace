@@ -10,9 +10,10 @@ then
 
   mv .devcontainer .. 
   git clone "$target_repo" . 
-  rm -rf .devcontainer 
-  git clean -f -f
-  mv ../.devcontainer . 
+  # rm -rf .devcontainer 
+  # git clean -f -f
+  # mv ../.devcontainer . 
+  mv -f ../.devcontainer/devcontainer.json .devcontainer
 
 else 
 
@@ -21,7 +22,8 @@ else
 fi
 
   micromamba activate 
-  micromamba install python -c conda-forge -y
+  micromamba install -y -n base -f .devcontainer/env.yaml &&
+  micromamba clean --all --yes
 
 # project dependencies installed via package.json
 # and postinstall script
