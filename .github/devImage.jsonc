@@ -14,6 +14,8 @@
 // Example build command:
 // devcontainer build --workspace-folder . --image-name suptext/observable-python-image:0.1.0
 
+// to do: make setup.sh accept a repo argument and rebuild images
+
 {
     "name": "Observable Framework Python starter",
     "image": "mambaorg/micromamba:alpine3.19",
