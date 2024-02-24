@@ -1,3 +1,5 @@
+// devcontainer build --workspace-folder . --image-name suptext/observable-python-image:0.1.0
+
 {
     "name": "Observable Framework Python starter",
     "image": "mambaorg/micromamba:alpine3.19",
