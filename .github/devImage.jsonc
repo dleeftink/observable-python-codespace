@@ -15,7 +15,7 @@
       
     },
   
-    "remoteUser": "root", // run as root when in prod
+    "remoteUser": "root", // run as root when in dev
 
     "remoteEnv": {
       "target_repo": "https://github.com/dleeftink/observable-python-codespace.git",
