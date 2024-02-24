@@ -1,3 +1,6 @@
+// curl endpoint for Dockerhub hosted devcontainer:
+// mkdir .devcontainer && curl https://raw.githubusercontent.com/dleeftink/observable-python-codespace/main/.devcontainer/remote.jsonc > .devcontainer/devcontainer.json
+
 {
   "name": "Observable Framework remote Python image",
   "image": "suptext/observable-python-image:0.1.0",
