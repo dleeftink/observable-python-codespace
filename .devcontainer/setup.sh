@@ -32,6 +32,7 @@ fi
   micromamba clean --all --yes
 
 # project dependencies installed via package.json
-# and postinstall script
+# and devcontainer postAttachCommand for decoupled image/package dependencies
+# note: use packgage.json postinstall instead to 'couple' installation
 
   npm install
