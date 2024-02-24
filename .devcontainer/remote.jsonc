@@ -1,1 +1,23 @@
-
+{
+  "name": "Observable Framework remote Python image",
+  "image": "suptext/observable-python-image:0.1.0",
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Live preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": {
+    "server": "code -r -g penguin-classification/docs/data/predictions.csv.py:1; npm run dep && npm run dev"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "penguin-classification/docs/index.md"
+      ]
+    }
+  }
+}
