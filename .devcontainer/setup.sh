@@ -8,18 +8,21 @@ eval "$(micromamba shell hook --shell bash )"
 if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ]; 
 then 
 
-# move files selectively 
+# move devcontainer.json selectively 
 
-  mv .devcontainer .. 
+  temp_dev=$(mktemp -d)
+  
+  mv .devcontainer "$temp_dev"
   git clone "$target_repo" . 
   
-  mv -f ../.devcontainer/devcontainer.json .devcontainer
-  rm -rf ../.devcontainer 
+  mv -f "$temp_dev/.devcontainer/devcontainer.json" .devcontainer
+  rm -rf "$temp_dev/.devcontainer"
+  
+# alternative: remove cloned and reinstate user .devcontainer folder
 
-# remove cloned and reinstate original .devcontainer folder
 # rm -rf .devcontainer 
 # git clean -f -f
-# mv ../.devcontainer . 
+# mv "$temp_dev/.devcontainer" . 
 
 else 
 
