@@ -3,7 +3,7 @@
 echo 'Please wait for setup to finish ...'
 eval "$(micromamba shell hook --shell bash )" 
 
-# get repo
+# get repo and move user .devcontainer to temporary folder
 
 if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ]; 
 then 
